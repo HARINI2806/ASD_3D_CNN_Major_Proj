@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+<center>
+  <div class="card" style="width: 80%; margin-top: 5%;">
+    <div class="card-body">
+      <h5 class="card-title">RESULTS</h5>
+    <div id="result">
+    <div class="col-lg-12 " >
+                    <h5>Check your Diagnosis Results below</h3>
+                    <p style="font-family:monospace; font-size: 16px; "><b>1 is AUTISM, 0 is NO AUTISM:</b> </p>
+                    <p style="font-family: fantasy; font-size: 20px; background-color: lightgrey;border: 5px solid blue;width: 150px; margin: 1px;">{{ prediction_text }}</p>
+    </div>
+    </div>
+    <div id="recommendation">
+        <div class="col-lg-12 " >
+            <p style="font-size:20px"><b>Recommendations:</b> </p>
+            <button class="btn btn-primary" onclick="displayimages()" id="RecbtnId">Generate Treatment Suggestions</button>
+                <img id="image" src="" style="width: 30%; height: 30%;"/>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        function displayimages() {
+    
+            let image = document.getElementById("image");
+        
+            var pictures = ["static/rec1.png","static/rec2.png","static/rec3.png","static/rec4.png",
+            "static/rec5.png","static/rec6.png","static/rec7.png","static/rec8.png","static/rec9.png",
+            "static/rec10.png","static/rec11.png"];
+          var picture = pictures[Math.floor(Math.random() * pictures.length)];
+            image.src = picture
+           
+            document.getElementById("RecbtnId").style.display = "none";
+        }
+    </script>
+
+{% endblock %}

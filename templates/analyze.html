@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+<center>
+  <div class="card" style="width: 50%; margin-top: 5%;">
+    <div class="card-body">
+      <h5 class="card-title">ANALYSIS</h5>
+      <p class="card-text" align="justify">
+          <ul>
+              <li>Click on the Generate Analysis button to compare the accuracy and
+                efficiency of different algorithms.</li>
+                <li>It also generates recommendations
+                    according to the level of autism predicted.</li>
+          </ul>
+      </p>
+      <button class="btn btn-primary" onclick="displayimages()" id="btnId">Generate Analysis</button>
+  </div>
+</center>
+<br>
+<center>
+<img id="image1" src="" />
+<br><br>
+<img id="image2" src="" />
+</center>
+
+<script>
+    function displayimages() {
+
+        let image1 = document.getElementById("image1");
+        let image2 = document.getElementById("image2");
+
+        var pictures = ["static/age-wise.jpg","static/img.jpeg","static/img1.png","static/img4.png",
+      "static/img2.png","static/img3.png","static/img5.png","static/img6.png","static/img7.png",
+      "static/img8.jpg","static/img9.jpg","static/img10.png","static/img11.png","static/img12.png",
+      "static/img13.jpeg","static/img14.jpeg","static/img15.jpeg","Knn.jpg","roc plot.jpg",
+      "static/age-wise.jpg","static/comparison.jpg","static/countries-wise.jpg","static/Feature correlation.jpg"];
+      var picture1 = pictures[Math.floor(Math.random() * pictures.length)];
+        image1.src = picture1
+        var picture2 = pictures[Math.floor(Math.random() * pictures.length)];
+        image2.src = picture2
+
+        document.getElementById("btnID")
+                .style.display = "none";
+    }
+</script>
+
+
+{% endblock %}

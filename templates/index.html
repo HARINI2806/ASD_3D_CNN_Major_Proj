@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block content %}
+<center>
+<div class="card" style="width: 70%">
+    <div class="card-body">
+      <h3 class="card-title">Clinical Data Collection</h3>
+        <div class="row">
+            <div class="col-md-8" style="margin: 10px auto;">
+                <form action="/predict" method="post">
+                    
+                    <h4>Vital Signs</h4>
+                    <h6>Type 0 if NO, 1 if YES</h6>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A1" placeholder="Does your child look at you when you call his/her name?" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A2" placeholder="How easy is it for you to get eye contact with your child?" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A3" placeholder="Does your child point to indicate that s/he wants something? (e.g. a toy that is out of reach)" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A4" placeholder="Does your child point to share interest with you? (e.g. pointing at an interesting sight)" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A5" placeholder="Does your child pretend? (e.g. care for dolls, talk on a toy phone)" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A6" placeholder="Does your child follow where you’re looking?" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A7" placeholder="If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g. stroking hair, hugging them)" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A8" placeholder="Would you describe your child’s first words" min="0">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A9" placeholder="Does your child use simple gestures? (e.g. wave goodbye)" min="0" step="1">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="A10" placeholder="Does your child stare at nothing with no apparent purpose?" min="0" step="1">
+                    </div>
+
+                    <h4>Demographics</h4>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="number" name="Age" placeholder="Age" min="0">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="text" name="Gender" placeholder="Female(f) or Male(m)" >
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="text" name="Ethnicity" placeholder="Ethnicity - Mention Ethnicity of the child">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="text" name="Jaudice" placeholder="Jaundice - yes or no" >
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="text" name="Country" placeholder="Which country does the child belong to?">
+                    </div>
+                    <div class="form=group" style="margin: 10px auto;">
+                        <input class="form-control" type="text" name="Relation" placeholder="What is the relation between you and the patient?">
+                    </div> 
+                    <div class="form=group" style="margin: 10px auto;">
+                        <label>fMRI Image obtained from the ASD Test</label>
+                        <input type="file" id="myFile" name="filename" placeholder="fMRI Image">
+                    </div> 
+
+
+                    
+                    <button type="submit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-lg ">Predict</button></div>
+                </form>
+            </div>
+        </div>
+    </center>
+    <center>
+           
+{% endblock %}
