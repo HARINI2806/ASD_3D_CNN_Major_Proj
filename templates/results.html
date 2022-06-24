@@ -14,24 +14,28 @@
         <div class="col-lg-12 " >
             <p style="font-size:20px"><b>Recommendations:</b> </p>
             <button class="btn btn-primary" onclick="displayimages()" id="RecbtnId">Generate Treatment Suggestions</button>
-                <img id="image" src="" style="width: 30%; height: 30%;"/>
+                
     </div>
     </div>
     </div>
-    </div>
+    <center>
+      <img id="image-res" src="image-res" style="width: 30%; height: 30%; display: none;"/>
+    </center>
 
     <script>
         function displayimages() {
     
-            let image = document.getElementById("image");
+            let image = document.getElementById("image-res");
         
             var pictures = ["static/rec1.png","static/rec2.png","static/rec3.png","static/rec4.png",
             "static/rec5.png","static/rec6.png","static/rec7.png","static/rec8.png","static/rec9.png",
             "static/rec10.png","static/rec11.png"];
+
           var picture = pictures[Math.floor(Math.random() * pictures.length)];
             image.src = picture
            
             document.getElementById("RecbtnId").style.display = "none";
+            image.style.display="block";
         }
     </script>
 

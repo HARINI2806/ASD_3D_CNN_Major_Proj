@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 # get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-data = pd.read_csv('C:/Users/User/ASD_Projs/autism_spectrum_detection-main-T9/ASD.csv')
+data = pd.read_csv('C:/Users/User/ASD_Projs/ASD_3D_CNN_Major_Proj/ASD.csv')
 (data.head(n=5))
 
 
